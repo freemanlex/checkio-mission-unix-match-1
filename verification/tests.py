@@ -31,11 +31,6 @@ TESTS = {
             "explanation": "? matches any single character (in this case it is \"1\""
         },
         {
-            "input": ['log1.txt', 'log[1234567890].txt'],
-            "answer": True,
-            "explanation": "[seq] matches any character in seq. \"1\" is in \"1234567890\""
-        },
-        {
             "input": ['log12.txt', 'log?.txt'],
             "answer": False,
             "explanation": "? matches any single character. Not more than one"
@@ -78,56 +73,6 @@ TESTS = {
             "explanation": "filename matches itself"
         },
         {
-            "input": ['name.txt', 'name[.]txt'],
-            "answer": True,
-            "explanation": "seq with one character works the same as just a one char"
-        },
-        {
-            "input": ['name.txt', 'name[]txt'],
-            "answer": False,
-            "explanation": "seq without any chars will never match"
-        },
-        {
-            "input": ['nametxt', 'name[]txt'],
-            "answer": False,
-            "explanation": "seq without any chars will never match"
-        },
-        {
-            "input": ['name.txt', '[!abc]name.txt'],
-            "answer": False,
-            "explanation": "[!seq] matches any character not in seq"
-        },
-        {
-            "input": ['1name.txt', '[!abc]name.txt'],
-            "answer": True,
-            "explanation": "[!seq] matches any character not in seq"
-        },
-        {
-            "input": ['1name.txt', '[!1234567890]*'],
-            "answer": False,
-            "explanation": "filename should not start with number"
-        },
-        {
-            "input": ['name.txt', '[!1234567890]*'],
-            "answer": True,
-            "explanation": "filename should not start with number"
-        },
-        {
-            "input": ['a1name.txt', '[!1234567890]*'],
-            "answer": True,
-            "explanation": "filename should not start with number"
-        },
-        {
-            "input": ['apache12.log', '*[1234567890].*'],
-            "answer": True,
-            "explanation": "should be a number before extension"
-        },
-        {
-            "input": ['apache.1log', '*[1234567890].*'],
-            "answer": False,
-            "explanation": "should be a number before extension"
-        },
-        {
             "input": ['apache1.log', '*.*'],
             "answer": True,
             "explanation": "filename should have an extension"
@@ -157,42 +102,6 @@ TESTS = {
         {
             "input": ['name....', 'name.*'],
             "answer": True
-        },
-        {
-            "input": ['name....', 'name.[!.][!.][!.]'],
-            "answer": False
-        },
-        {
-            "input": ['name.exe', 'name.[!.][!.][!.]'],
-            "answer": True
-        },
-        {
-            "input": ['[!]check.txt', '[!]check.txt'],
-            "answer": True,
-            "explanation": "[!] is not class"
-        },
-        {
-            "input": ['check.txt', '[[c]heck.txt'],
-            "answer": True,
-            "explanation": "unmatched brackets"
-        },
-        {
-            "input": ['[?*]', '[[][?][*][]]'],
-            "answer": True,
-            "explanation": "escaping metacharacters"
-        },
-        {
-            "input": ['Feb 2018', '[A-Z][a-z][a-zA-Z] [2-3][0-4][1-1][5-9]'],
-            "answer": True
-        },
-        {
-            "input": ['[check].txt', '[][]check[][].txt'],
-            "answer": True
-        },
-        {
-            "input": ["checkio", "[c[]heckio"],
-            "answer": True
-        },
-
+        }
     ]
 }

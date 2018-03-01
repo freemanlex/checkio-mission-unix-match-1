@@ -15,14 +15,6 @@
         <th>?</th>
         <td>matches any single character</td>
     </tr>
-    <tr>
-        <th>[seq]</th>
-        <td>matches any character in seq</td>
-    </tr>
-    <tr>
-        <th>[!seq]</th>
-        <td>matches any character not in seq</td>
-    </tr>
 </table>
 
 <!-- Explain input and output values -->
@@ -46,7 +38,6 @@
 unixMatch('other.exe', '*') == true
 unixMatch('my.exe', '*.txt') == false
 unixMatch('log1.txt', 'log?.txt') == true
-unixMatch('log1.txt', 'log[1234567890].txt') == true
 unixMatch('log12.txt', 'log?.txt') == false
 unixMatch('log12.txt', 'log??.txt') == true
 </pre>
@@ -55,7 +46,6 @@ unixMatch('log12.txt', 'log??.txt') == true
 unix_match('other.exe', '*') == True
 unix_match('my.exe', '*.txt') == False
 unix_match('log1.txt', 'log?.txt') == True
-unix_match('log1.txt', 'log[1234567890].txt') == True
 unix_match('log12.txt', 'log?.txt') == False
 unix_match('log12.txt', 'log??.txt') == True
 </pre>
