@@ -1,0 +1,66 @@
+<!-- Describe task in general -->
+
+<p>
+    Ваша задача - определить, соответствует ли заданное имя файла заданному поисковому паттерну.
+</p>
+
+<p> Вот небольшая таблица, которая показывает, какие символы могут использовать в паттернах</p>
+
+<table style="border:1px solid black">
+    <tr>
+        <th>*</th>
+        <td>соответствует всему (любому количеству любых символов)</td>
+    </tr>
+    <tr>
+        <th>?</th>
+        <td>соответствует любому одному символу</td>
+    </tr>
+</table>
+
+<!-- Explain input and output values -->
+<p>
+    <strong>Входные данные: </strong> Два аргумента. Оба - строки.
+</p>
+
+<p>
+    <strong>Выходные данные: </strong> True or False.
+</p>
+
+
+<!-- Put some usage examples -->
+<div class="for_info_only">
+    <p>
+        <strong>Пример:</strong>
+    </p>
+
+{% if interpreter.slug == "js-node" %}
+<pre class="brush: javascript">unixMatch('somefile.txt', '*') == true
+unixMatch('other.exe', '*') == true
+unixMatch('my.exe', '*.txt') == false
+unixMatch('log1.txt', 'log?.txt') == true
+unixMatch('log12.txt', 'log?.txt') == false
+unixMatch('log12.txt', 'log??.txt') == true
+</pre>
+{% else %}
+<pre class="brush: python">unix_match('somefile.txt', '*') == True
+unix_match('other.exe', '*') == True
+unix_match('my.exe', '*.txt') == False
+unix_match('log1.txt', 'log?.txt') == True
+unix_match('log12.txt', 'log?.txt') == False
+unix_match('log12.txt', 'log??.txt') == True
+</pre>
+{% endif %}
+</div>
+<!-- Here you can explain how it can be used in development and what is usage of this. -->
+<!-- The section is optional -->
+<p class="for_info_only">
+    <strong>Как это используется: </strong>
+    <i>Для облегчения поиска нужных файлов</i>
+</p>
+
+<!-- Here you can explain some constraints for input-->
+<!-- The section is optional -->
+<p>
+    <strong>Предусловия:</strong>
+    <i> 0 < len(strings) < 100 </i>
+</p>
