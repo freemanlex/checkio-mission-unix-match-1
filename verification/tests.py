@@ -39,7 +39,7 @@ TESTS = {
             "input": ['log12.txt', 'log??.txt'],
             "answer": True,
             "explanation": "? matches any two character"
-        }
+        },
     ],
     "Extra": [
         {
@@ -89,19 +89,19 @@ TESTS = {
         },
         {
             "input": ['name.txt', 'name.???'],
-            "answer": True
+            "answer": True,
         },
         {
             "input": ['name.exe', 'name.???'],
-            "answer": True
+            "answer": True,
         },
         {
             "input": ['name....', 'name.???'],
-            "answer": True
+            "answer": True,
         },
         {
             "input": ['name....', 'name.*'],
-            "answer": True
-        }
+            "answer": True,
+        },
     ]
 }
